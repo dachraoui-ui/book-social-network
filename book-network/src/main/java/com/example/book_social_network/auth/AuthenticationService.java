@@ -1,10 +1,13 @@
 package com.example.book_social_network.auth;
 
 import com.example.book_social_network.email.EmailService;
+import com.example.book_social_network.email.EmailTemplateName;
 import com.example.book_social_network.role.RoleRepository;
+import com.example.book_social_network.user.Token;
 import com.example.book_social_network.user.TokenRepository;
+import com.example.book_social_network.user.User;
 import com.example.book_social_network.user.UserRepository;
-import email.EmailService;
+import com.example.book_social_network.email.EmailService;
 import jakarta.mail.MessagingException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -23,6 +26,8 @@ public class AuthenticationService {
     private final TokenRepository tokenRepository;
     private final EmailService emailService;
 
+    private String activationUrl;
+
     public void register(RegistrationRequest request) {
         var userRole = roleRepository.findByName("USER")
         // todo - better exception handling
@@ -30,7 +35,7 @@ public class AuthenticationService {
 
         var user = User.builder()
                 .firstname(request.getFirstname())
-                .lastname(request.getLastname())
+                .Lastname(request.getLastname())
                 .email(request.getEmail())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .accountLocked(false)
