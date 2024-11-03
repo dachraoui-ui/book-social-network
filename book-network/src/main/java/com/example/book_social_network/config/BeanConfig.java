@@ -22,6 +22,7 @@ public class BeanConfig {
         authProvider.setPasswordEncoder(passwordEncoder());
         return authProvider;
     }
+    // Verify that the password encoder is configured correctly
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
