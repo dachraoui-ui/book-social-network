@@ -64,7 +64,7 @@ public class AuthenticationService {
                 .token(generatedToken)
                 .createdAt(LocalDateTime.now())
                 .expiresAt(LocalDateTime.now().plusMinutes(15))
-                .user(user)
+                .user(user) // the foreign key to the user table
                 .build();
         tokenRepository.save(token);
 
@@ -75,9 +75,12 @@ public class AuthenticationService {
         StringBuilder codeBuilder = new StringBuilder();
 
         SecureRandom secureRandom = new SecureRandom();
+        //SecureRandom, a Java class used for generating cryptographically strong random numbers
 
         for (int i = 0; i < length; i++) {
-            int randomIndex = secureRandom.nextInt(characters.length());
+            int randomIndex = secureRandom.nextInt(characters.length()); // length = 9
+            // nextInt Generate a random integer between 0 (inclusive) and characters.length (exclusive)
+            // this line generates a random number between 0 and the length of the characters string
             codeBuilder.append(characters.charAt(randomIndex));
         }
 
