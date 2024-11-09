@@ -4,34 +4,39 @@ spring:
     username: username
     password: password
     driver-class-name: org.postgresql.Driver
-    jpa:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+    properties:
       hibernate:
-        ddl-auto: update
-      show-sql: false
-      properties:
-        hibernate:
-          format_sql: true
-      database: postgresql
-      database-platform: org.hibernate.dialect.PostgreSQLDialect
-    #nbadlou just l port username w password w b9i valid
-    mail:
-        host: localhost
-        port: 1025
-        username: benothmaraen@gmail.com
-        password: gqmpyrzpusfgijmm
-        properties:
-            mail:
-                smtp:
-                    trust: "*"
-                auth: true
-                starttls:
-                    enabled: true #security protocol
-                connectiontimeout: 5000
-                timeout: 3000
-                writetimeout: 5000
+        format_sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  mail:
+    host: localhost
+    port: 1025
+    username: benothmaraen@gmail.com
+    password: password
+    properties:
+      mail:
+        smtp:
+          trust: "*"
+        auth: true
+        starttls:
+          enabled: true
+        connectiontimeout: 5000
+        timeout: 3000
+        writetimeout: 5000
 
 application:
-    security:
-        jwt:
-          secret-key: 46A74DDE69397DE39DB1823F6F1B7
-          expiration-time: 86400000
+  security:
+    jwt:
+      secret-key: 46A74DDE69397DE39DB1823F6F1B7
+      expiration-time: 86400000
+  mailing:
+    frontend:
+      activation-url: http://localhost:4200/activate-account
+
+server:
+  port: 8088
