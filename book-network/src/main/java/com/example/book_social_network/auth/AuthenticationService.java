@@ -22,7 +22,7 @@ import java.util.List;
 @RequiredArgsConstructor
 public class AuthenticationService {
     private final PasswordEncoder passwordEncoder;
-    private RoleRepository roleRepository;
+    private final RoleRepository roleRepository;
     private final UserRepository userRepository;
     private final TokenRepository tokenRepository;
     private final EmailService emailService;
