@@ -16,7 +16,7 @@ import java.util.Map;
 import java.util.function.Function;
 
 @Service
-public class jwtService {
+public class JwtService {
     @Value("${application.security.jwt.expiration-time}")
     private long jwtExpiration;
     @Value("${application.security.jwt.secret-key}")
@@ -46,7 +46,7 @@ public class jwtService {
     public String generateToken(UserDetails userDetails){
         return generateToken(new HashMap<>(), userDetails);
     }
-    private String generateToken(Map<String, Object> claims, UserDetails userDetails) {
+    public String generateToken(Map<String, Object> claims, UserDetails userDetails) {
         return buildToken(claims, userDetails, jwtExpiration);
 
     }
