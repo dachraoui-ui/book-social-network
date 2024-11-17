@@ -2,6 +2,7 @@ package com.example.book_social_network.book;
 
 
 import com.example.book_social_network.common.PageResponse;
+import com.example.book_social_network.exception.OperationNotPermittedException;
 import com.example.book_social_network.history.BookTransactionHistory;
 import com.example.book_social_network.history.BookTransactionHistoryRepository;
 import com.example.book_social_network.user.User;
@@ -15,6 +16,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -107,4 +109,17 @@ public class BookService {
                 allBorrowedBooks.isFirst(),
                 allBorrowedBooks.isLast()
         );    }
+
+    public Integer updateShareableStatus(Integer bookId, Authentication connectedUser) {
+        Book book = bookRepository.findById(bookId)
+                .orElseThrow(() -> new EntityNotFoundException("No book found with the ID::" + bookId));
+        User user = ((User) connectedUser.getPrincipal());
+        if (!Objects.equals(book.getOwner().getBooks(),user.getId())){
+            // throw an exception
+            throw new OperationNotPermittedException("You cannot update the shareable status of a book that you do not own");
+        }
+        book.setShareable(!book.isShareable());
+        bookRepository.save(book);
+        return bookId;
+    }
 }
