@@ -3,11 +3,14 @@ package com.example.book_social_network.feedback;
 
 import com.example.book_social_network.book.Book;
 import com.example.book_social_network.book.BookRepository;
+import com.example.book_social_network.common.PageResponse;
 import com.example.book_social_network.exception.OperationNotPermittedException;
-import com.example.book_social_network.history.BookTransactionHistory;
 import com.example.book_social_network.user.User;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +22,9 @@ import java.util.Objects;
 public class FeedbackService {
 
     private final BookRepository bookRepository;
+    private final FeedbackMapper feedbackMapper;
+    private final FeedbackRepository feedbackRepository;
+
     public Integer save(FeedbackRequest request, Authentication connectedUser) {
         Book book = bookRepository.findById(request.bookId())
                 .orElseThrow(() -> new EntityNotFoundException("No book  found with the ID::" + request.bookId()));
@@ -30,5 +36,14 @@ public class FeedbackService {
             throw new OperationNotPermittedException("You cannot give a feedback for your own book ");
         }
         Feedback feedback = feedbackMapper.toFeedback(request);
+        return feedbackRepository.save(feedback).getId();
+    }
+
+
+    public PageResponse<FeedbackResponse> findAllFeedbacksByBook(Integer bookId, int page, int size, Authentication connectedUser) {
+        Pageable pageable = PageRequest.of(page, size);
+        User user = ((User) connectedUser.getPrincipal());
+        Page<Feedback> feedbacks = feedbackRepository.findAllByBookId(bookId, pageable);
+
     }
 }
