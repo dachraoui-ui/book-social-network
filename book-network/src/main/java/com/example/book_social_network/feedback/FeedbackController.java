@@ -32,5 +32,5 @@ public class FeedbackController {
     ){
         return ResponseEntity.ok(service.findAllFeedbacksByBook(bookId,page,size,connectedUser));
     }
-    )
+
 }
