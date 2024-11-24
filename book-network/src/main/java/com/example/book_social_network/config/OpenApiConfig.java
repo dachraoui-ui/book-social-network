@@ -18,7 +18,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
                         url = "https://www.linkedin.com/in/benothman-rayen"
                 ),
                 description = "Open API for Spring security",
-                title ="OpenApi specification - RAyenBo" ,
+                title ="OpenApi specification - RayenBo/AhmedDach" ,
                 version = "1.0.",
                 license= @License (
                         name = "Lcience name",
@@ -39,12 +39,10 @@ import io.swagger.v3.oas.annotations.servers.Server;
         },
         security = {
                 @SecurityRequirement(
-                        name = "bearerAuth"
+                           name = "bearerAuth"
                 )
 
         }
-
-
 
 
 )
