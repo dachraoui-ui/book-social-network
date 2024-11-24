@@ -3,6 +3,7 @@
   <component name="AdditionalModuleElements">
     <content url="file://$MODULE_DIR$">
       <sourceFolder url="file://$MODULE_DIR$/book-network-ui" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/book-network-ui/src/app/pages" />
     </content>
   </component>
 </module>
