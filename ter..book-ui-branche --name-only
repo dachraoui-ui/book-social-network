@@ -1,0 +1,55 @@
+[1mdiff --git a/.idea/book-social-network.iml b/.idea/book-social-network.iml[m
+[1mindex 88d57e52..b69fb812 100644[m
+[1m--- a/.idea/book-social-network.iml[m
+[1m+++ b/.idea/book-social-network.iml[m
+[36m@@ -1,9 +1,6 @@[m
+ <?xml version="1.0" encoding="UTF-8"?>[m
+ <module type="JAVA_MODULE" version="4">[m
+   <component name="AdditionalModuleElements">[m
+[31m-    <content url="file://$MODULE_DIR$">[m
+[31m-      <sourceFolder url="file://$MODULE_DIR$/book-network-ui" isTestSource="false" />[m
+[31m-      <excludeFolder url="file://$MODULE_DIR$/book-network-ui/src/app/pages" />[m
+[31m-    </content>[m
+[32m+[m[32m    <content url="file://$MODULE_DIR$" />[m
+   </component>[m
+ </module>[m
+\ No newline at end of file[m
+[1mdiff --git a/.idea/jsLibraryMappings.xml b/.idea/jsLibraryMappings.xml[m
+[1mdeleted file mode 100644[m
+[1mindex 7e159850..00000000[m
+[1m--- a/.idea/jsLibraryMappings.xml[m
+[1m+++ /dev/null[m
+[36m@@ -1,6 +0,0 @@[m
+[31m-<?xml version="1.0" encoding="UTF-8"?>[m
+[31m-<project version="4">[m
+[31m-  <component name="JavaScriptLibraryMappings">[m
+[31m-    <excludedPredefinedLibrary name="book-social-network/book-network-ui/node_modules" />[m
+[31m-  </component>[m
+[31m-</project>[m
+\ No newline at end of file[m
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/0.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/0.pack[m
+[1mnew file mode 100644[m
+[1mindex 00000000..e5756c59[m
+Binary files /dev/null and b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/0.pack differ
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/1.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/1.pack[m
+[1mnew file mode 100644[m
+[1mindex 00000000..ce6ad3a6[m
+Binary files /dev/null and b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/1.pack differ
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/2.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/2.pack[m
+[1mnew file mode 100644[m
+[1mindex 00000000..60b57943[m
+Binary files /dev/null and b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/2.pack differ
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/3.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/3.pack[m
+[1mnew file mode 100644[m
+[1mindex 00000000..d2c8a19e[m
+Binary files /dev/null and b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/3.pack differ
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/4.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/4.pack[m
+[1mnew file mode 100644[m
+[1mindex 00000000..a71a63d9[m
+Binary files /dev/null and b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/4.pack differ
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/5.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/5.pack[m
+[1mnew file mode 100644[m
+[1mindex 00000000..da72875a[m
+Binary files /dev/null and b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/5.pack differ
+[1mdiff --git a/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/index.pack b/book-network-ui/.angular/cache/16.2.16/angular-webpack/dce6ea4bfc81c246625bc303b2ba3fd108dc6c06/index.pack[m
+[1mnew file 
