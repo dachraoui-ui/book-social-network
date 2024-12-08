@@ -34,6 +34,7 @@ services:
        image: bsn/bsn-ui:1.0.0
        ports:
             - 8080:80
+            # to change the port of the container
        networks:
             - spring-demo
        depends_on:
