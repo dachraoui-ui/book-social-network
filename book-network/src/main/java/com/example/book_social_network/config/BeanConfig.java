@@ -35,6 +35,7 @@ public class BeanConfig {
         return authProvider;
 
         // Verify that the password encoder is configured correctly
+        // no need to call the password encoder directly
     }
 
     @Bean
