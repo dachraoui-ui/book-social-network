@@ -59,21 +59,9 @@ public class BeanConfig {
         final CorsConfiguration config = new CorsConfiguration();
 
         //config.setAllowCredentials(true);
-        config.setAllowedOrigins(List.of("http://localhost:4200" ,"http://localhost:8080")); // Your Angular app URL and backend
-        config.setAllowedHeaders(Arrays.asList(
-                HttpHeaders.ORIGIN,
-                HttpHeaders.CONTENT_TYPE,
-                HttpHeaders.ACCEPT,
-                HttpHeaders.AUTHORIZATION // For sending JWT token
-        ));
-        config.setAllowedMethods(Arrays.asList(
-                "GET",
-                "POST",
-                "DELETE",
-                "PUT",
-                "PATCH",
-                "OPTIONS" // Include OPTIONS for preflight requests
-        ));
+        config.setAllowedOrigins(allowedOrigins); // Your Angular app URL and backend
+        config.setAllowedHeaders(Arrays.asList("*")); // not recommended for production
+        config.setAllowedMethods(Arrays.asList("*"));   // not recommended for production
 
         source.registerCorsConfiguration("/**", config);
         return new CorsFilter(source);
