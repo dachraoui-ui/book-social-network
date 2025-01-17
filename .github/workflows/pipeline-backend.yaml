@@ -7,7 +7,7 @@ on:
         paths:
           - book-network/**
           - docker/backend/**
-          - 'docker-compose.yml'
+          - 'docker-compose.yaml'
           - .github/workflows/*-backend.yml
 
 jobs:
@@ -20,7 +20,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Setup JDK
-      uses: actions/setup-jdk@v4
+      uses: actions/setup-java@v4
       with:
         distribution: 'corretto'
         java-version: '17'
@@ -28,7 +28,7 @@ jobs:
       run: |
         cd book-network
         ./mvnw clean compile
-  unit-test:
+  unit-tests:
     runs-on: self-hosted
     name: Unit tests
     steps:
@@ -37,7 +37,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup JDK
-        uses: actions/setup-jdk@v4
+        uses: actions/setup-java@v4
         with:
           distribution: 'corretto'
           java-version: '17'
@@ -55,7 +55,7 @@ jobs:
       with:
         fetch-depth: 0
     - name: Setup JDK
-      uses: actions/setup-jdk@v4
+      uses: actions/setup-java@v4
       with:
         distribution: 'corretto'
         java-version: '17'
@@ -79,6 +79,10 @@ jobs:
         with:
           distribution: 'corretto'
           java-version: '17'
+      - name: Build project
+        run: |
+          cd book-network
+          ./mvnw clean package
       - name: Extract project version
         id: extract_version
         run: |
