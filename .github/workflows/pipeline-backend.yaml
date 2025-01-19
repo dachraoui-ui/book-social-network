@@ -98,7 +98,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           context: book-network
-          file: book-network/backend/Dockerfile
+          file: docker/backend/Dockerfile
           push: true
           platforms: linux/amd64
           tags: ${{ secrets.DOCKERHUB_USERNAME }}/bsn-api:${{ steps.extract_version.outputs.VERSION }},${{ secrets.DOCKERHUB_USERNAME }}/bsn-api:latest
