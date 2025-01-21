@@ -9,6 +9,8 @@ on:
       - 'docker-compose.yaml'
       - .github/workflows/*-frontend.yml
 
+# those jobs will run in parallel
+
 jobs:
   build-image:
     name: Build frontend image
