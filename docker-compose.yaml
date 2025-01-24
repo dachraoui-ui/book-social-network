@@ -54,6 +54,7 @@ services:
         depends_on:
             - bsn-api
 
+#networks to connect the containers
 networks:
     spring-demo:
         driver: bridge
