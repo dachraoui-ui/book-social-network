@@ -22,6 +22,13 @@ export class KeycloakService {
   constructor() { }
 
   async init() {
+    console.log('Authenticating...')
+    const authenticated = await this.keycloak.init({
+      onLoad: 'login-required',
+    })
 
+    if(authenticated) {
+      console.log('User Authenticated')
+    }
   }
 }

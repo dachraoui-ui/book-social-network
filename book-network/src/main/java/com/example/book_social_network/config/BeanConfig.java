@@ -26,7 +26,7 @@ import java.util.List;
 public class BeanConfig {
 
     private final UserDetailsService userDetailsService;
-    @Value("${application.cors.origins:*}")
+    @Value("#{'${application.cors.origins:*}'.split(',')}")
     private List<String> allowedOrigins;
 
     @Bean
