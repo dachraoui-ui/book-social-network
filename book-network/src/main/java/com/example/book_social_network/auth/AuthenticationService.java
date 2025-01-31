@@ -41,7 +41,7 @@ public class AuthenticationService {
 
     public void register(RegistrationRequest request) throws MessagingException {
         var userRole = roleRepository.findByName("USER")
-        // todo - better exception handling
+
         .orElseThrow(() -> new RuntimeException("Role User was not initialized"));
 
         var user = User.builder()
@@ -115,7 +115,6 @@ public class AuthenticationService {
 
     public void activateAccount(String token) throws MessagingException {
         Token savedToken = tokenRepository.findByToken(token)
-                // todo - exception has to be defined
                 .orElseThrow(() -> new RuntimeException("Token not found"));
         if(LocalDateTime.now().isAfter(savedToken.getExpiresAt())){
             sendValidationEmail(savedToken.getUser());
