@@ -14,25 +14,20 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 import static org.springframework.security.config.Customizer.withDefaults;
 import static org.springframework.security.config.http.SessionCreationPolicy.STATELESS;
 
-@Configuration//configuration class
+@Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
 @EnableMethodSecurity(securedEnabled = true)
-
-
-
-
 public class SecurityConfig {
 
     private final JwtFilter jwtAuthFilter;
     private final AuthenticationProvider authenticationProvider;
 
-    //SecurityFilterChain is a filter chain that is responsible for processing the security of the application.
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-                .cors() // Uses the CorsConfigurationSource bean defined in BeanConfig
-                .and()
+                // Use Customizer to avoid deprecation
+                .cors(cors -> cors.configure(http)) // or .cors(Customizer.withDefaults())
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(req ->
                         req.requestMatchers(
@@ -59,5 +54,6 @@ public class SecurityConfig {
         return http.build();
     }
 }
+
 
 

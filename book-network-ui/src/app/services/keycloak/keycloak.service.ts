@@ -38,4 +38,11 @@ export class KeycloakService {
       this._profile.token = this.keycloak?.token;
     }
   }
+
+  login(){
+    return this.keycloak?.login();
+  }
+  logout(){
+    return this.keycloak?.logout({redirectUri: 'http://localhost:4200'});
+  }
 }
