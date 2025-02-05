@@ -23,7 +23,7 @@ import java.util.List;
 
 public class Book extends BaseEntity {
 
-    private String title ;
+    private String title;
     private String authorName;
     private String isbn;
     private String synopsis;
@@ -43,8 +43,8 @@ public class Book extends BaseEntity {
     private List<BookTransactionHistory> histories;
 
     @Transient
-    public double getRate(){
-        if(feedbacks == null || feedbacks.isEmpty()){
+    public double getRate() {
+        if (feedbacks == null || feedbacks.isEmpty()) {
             return 0.0;
         }
         var rate = this.feedbacks.stream()
