@@ -11,6 +11,7 @@ export class HttpTokenInterceptor implements HttpInterceptor {
     private keycloakService:KeycloakService
   ) {}
 
+  // handle the request and add the token to the header
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const token = this.keycloakService.keycloak.token;
     if (token) {
