@@ -40,6 +40,6 @@ public class Role {
     @LastModifiedDate
     @Column(insertable = false)
     private LocalDateTime lastModifiedDate;
-
+    // i'm fed up from all this shit
 
 }
